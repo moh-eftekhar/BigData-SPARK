@@ -1,8 +1,20 @@
 
-x = [1,2,3,4]
-for i in range(len(x)):
-    for j in range(i+1, len(x)):
-            print(x[i], x[j])
+x = [['B1', 'B3', 'B5'],
+    ['B1', 'B3', 'B4', 'B5'],
+    ['B3'],
+    ['B2'],
+    ['B5', 'B1', 'B3']]
+def get_combinations(x):
+    products = list(x)
+    print("products------->>>>>>>",products)
+    result = []
+    for product1 in products:
+        for product2 in products:
+            if product1 < product2:
+                result.append(((product1, product2),1))
+    return result
+
+print("Result//////------>>>>>",get_combinations(x))
 # data = [
 #     (('B1', 'B3'), 1),
 #     (('B1', 'B5'), 1),
